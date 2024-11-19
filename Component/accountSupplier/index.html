@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الموردين والمقاولين</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body dir="rtl" onload="showEmployees();">
+    <div class="app">
+        <header>
+            <a class="home" href="../home/home.html"><img src="../../img/huanfang.ico" alt="home"></a>
+            <span class="userName"></span>
+            <h1>الموردين والمقاولين</h1>
+            <span class="dateAndTime"></span>
+            <a class="exit" href="../../index.html"><img src="../../img/cancel.ico" alt="exit"></a>
+        </header>
+        <div class="buttons">
+            <button onclick="openInputs();" style="display: none;">اضافة</button>
+            <button onclick="showContractor();" id="btnShow">المقاولين</button>
+            <input  type="text" name="" value="" onkeyup="searchData(this.value);" id="search" placeholder="بحث">
+            <button onclick="refresh();">تحديث</button>
+            <button onclick="showRecycleBin();" style="display: none;">المحذوفات</button>
+        </div>
+        <!-- <aside>
+            <button id=""><a href="../accountClients/index.html">اليوميات</a></button>
+            <button id=""><a href="../expenses/expenses.html">مصروفات</a></button>
+            <button id=""><a href="../reports/report.html">التقارير</a></button>
+            <button id=""><a href="../employees/index.html">اضافة موظفين وعملاء</a></button>
+
+
+ 
+        </aside> -->
+        <div class="alarm alarm1">
+            <div class="inputsAlarm">
+                <h3 style="color: #fff; margin: 10px;">ادخل الباسوورد للحذف</h3>
+                <input type="text" name="" id="inputPass">
+                <div class="buttons">
+                    <button id="btnCheckEdite" onclick="checkPass1();">موافق</button>
+                    <button id="btnCancel" onclick="exitePass();">الغاء</button>
+                </div>
+            </div>
+        </div>
+        <div class="alarm alarm2">
+            <div class="inputsAlarm">
+                <h3 style="color: #fff; margin: 10px;">هل تريد الحذف</h3>
+                <div class="buttons">
+                    <button id="btnCheckEdite" onclick="checkPass2();">موافق</button>
+                    <button id="btnCancel" onclick="exitePass();">الغاء</button>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <section class="inputsEmployees">
+                <form class="addEmployee" >
+                    <div class="priceOnly">
+                        <input  type="date" name="" value="2024-01-01" id="dateContract"   >
+                        <input  type="text" name="" value="" id="name" placeholder="اسم العميل"  >
+                        <input  type="text" name="" value="" id="nameProject" placeholder="اسم المشروع"  >
+                        <input  type="text" name="" value="" id="address" placeholder="العنوان"  >
+                        
+                       
+                    </div>
+                    <div class="priceOnly">
+                        <input  type="text" name="" value="" id="phone" placeholder="رقم التليفون" minlength="11" maxlength="11"  >
+                        <input  type="text" name="" value="" id="price" placeholder="قيمة التعاقد"  >
+                        <input  type="text" name="" value="" id="rate" placeholder=" نسبة الاشراف"  >
+                    </div>
+                    <div class="priceOnly">
+                        <input  type="text" name="" value="" id="notes" placeholder="ملاحظات" >
+
+                    </div>
+                    <div class="priceOnly">
+                        <button  class="createEmpl" >اضافة عميل جديد</button>
+                        <button type="reset" onclick="refresh();">الغاء</button>
+                        
+                    </div>
+                </form>
+                
+                <div class="tableSupplier" >
+                    <table border="1" >
+                        <tr>
+                            <th colspan="13" class="headTable">الموردين</th>
+                        </tr>
+                        <tr>
+                            <th>م</th>
+                            <th>كود المورد</th>
+                            <th>اسم المورد</th>
+                            <th>اسم المشروع</th>
+                            <th>تاريخ التسجيل</th>
+                            <th>العنوان</th>
+                            <th>رقم التليفون</th>
+                            <th>حالة المشروع</th>
+                            <th>ملاحظات</th>
+                            
+                        </tr>
+                        <tbody class="tbodyEmployees1">
+                            
+                            
+                        </tbody>
+                        
+                    </table>
+                    
+                    
+                </div>
+
+                <div class="tableContractor" >
+                    <table border="1" >
+                        
+                        
+                        <tr>
+                            <th colspan="13" class="headTable">المقاولين</th>
+                        </tr>
+                        <tr>
+                            <th>م</th>
+                            <th>كود المقاول</th>
+                            <th>اسم المقاول</th>
+                            <th>اسم المشروع</th>
+                            <th>تاريخ التسجيل</th>
+                            <th>العنوان</th>
+                            <th>رقم التليفون</th>
+                            <th>حالة المشروع</th>
+                            <th>ملاحظات</th>
+                            
+                        </tr>
+                        <tbody class="tbodyEmployees2">
+                            
+                            
+                        </tbody>
+                    </table>
+                    
+                    
+                </div>
+                
+                
+            </section>
+           
+            <section class="inputsSalary" style="display: none;">
+                <form class="inputs" id="addSalary" >
+                    <div class="priceOnly">
+                        <div style="width: 100%;">
+                            <select id="selectEmployeeName" onchange="selectEmpl();" required style="width: 100%;">
+                                <option value="">اسم العامل</option>
+                            </select>
+                        </div>
+                        <input type="date" name="" value="" id="expensesDate" placeholder=" " >
+                        <input  type="text" name="" value=""  id="numDay" onkeyup="calcTotal();"  placeholder="عدد الايام" >
+                        <input  type="text" name="" value=""  id="price" onkeyup="calcTotal();" placeholder="الاجر" >
+                        <input  type="text" name="" value="" id="total" placeholder="الاجمالي" readonly >
+                        <input  type="text" name="" value="" onkeyup="calcRemain();" id="paid" placeholder="السلف" >
+                        <input  type="text" name="" value=""  id="remain" placeholder="المتبقي" readonly>
+                        <textarea name="" id="expensesDetails" cols="50" rows="2" placeholder="ملاحظات"></textarea>
+    
+                    </div>
+                    <div class="priceOnly">
+                        <button type="submit"  id="createSalary">اضافة</button>
+                        <button type="reset" onclick="refresh();">الغاء</button>
+                        <button type="button"  id="" onclick="openInputsAdd();">عرض العمال</button>
+                        <button type="button"  id="" onclick="searchSalary();">بحث</button>
+                        <button type="button"  id="" onclick="printThisPage();">طباعة</button>
+                        <button onclick="refresh();">تحديث</button>
+                    </div>
+                </form>
+                <div  class="tableSalary">
+                    
+                    <table border="1">
+                        <tr>
+                            <th colspan="10" class="headTable"></th>
+                        </tr>
+                        <tr>
+                            <th>اسم العميل</th>
+                            <th>اسم المشروع</th>
+                            <th>تاريخ التعاقد</th>
+                            <th>العنوان</th>
+                            <th>رقم التليفون</th>
+                            <th>قيمة التعاقد</th>
+                            <th>نسبة الاشراف</th>
+                            <th>ملاحظات</th>
+                        </tr>
+                        <tbody class="tbodySalarys1">
+                            
+                            
+                        </tbody>
+                    </table>
+                    
+                </div>
+                <div  class="tableSearch" style="display: none;">
+                    
+                    <table border="1">
+                        <tr>
+                            <th colspan="10" class="headTable">تفاصيل اليوميات</th>
+                        </tr>
+                        <tr>
+                            <th>التاريخ</th>
+                            <th>اسم العامل</th>
+                            <th>الاجر اليومي</th>
+                            <th>الشهر</th>
+                            <th>واصل / سلفه</th>
+                            <th>الباقي من المرتب</th>
+                        </tr>
+                        <tbody class="tbodySalarys2">
+                            
+                            
+                        </tbody>
+                    </table>
+                    
+                </div>
+            </section>
+
+
+            
+        </div>
+        
+    </div>
+
+   
+    
+    <script src="js/main.js"></script>
+</body>
+</html>

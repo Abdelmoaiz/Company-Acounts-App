@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>توريد العملاء والخشب</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body dir="rtl" onload="showEmployees();">
+    <div class="app">
+        <header>
+            <a class="home" href="../home/home.html"><img src="../../img/huanfang.ico" alt="home"></a>
+            <span class="userName"></span>
+            <h1>توريد العملاء والخشب</h1>
+            <span class="dateAndTime"></span>
+            <a class="exit" href="../../index.html"><img src="../../img/cancel.ico" alt="exit"></a>
+        </header>
+        <div class="buttons">
+            <!-- <button onclick="openInputs();" >اضافة</button> -->
+            <!-- <button onclick="openInputsSearch();">بحث</button> -->
+            
+        </div>
+        <div class="inputsSearch">
+            
+
+        </div>
+       
+        <div class="alarm alarm1">
+            <div class="inputsAlarm">
+                <h3 style="color: #fff; margin: 10px;">ادخل الباسوورد للحذف</h3>
+                <input type="password" name="" id="inputPass">
+                <div class="buttons">
+                    <button id="btnCheckEdite" onclick="checkPass1();">موافق</button>
+                    <button id="btnCancel" onclick="exitePass();">الغاء</button>
+                </div>
+            </div>
+        </div>
+        <div class="alarm alarm2">
+            <div class="inputsAlarm">
+                <h3 style="color: #fff; margin: 10px;">هل تريد الحذف</h3>
+                <div class="buttons">
+                    <button id="btnCheckEdite" onclick="checkPass2();">موافق</button>
+                    <button id="btnCancel" onclick="exitePass();">الغاء</button>
+                </div>
+            </div>
+        </div>
+        <aside>
+            <form class="addEmployee" >
+                <div>
+                    <input  type="date" name="" value="2024-01-01" id="dateContract"   >
+                    <input  type="number" name="" value="" onkeyup="getCustomer(this.value);" id="codeCustomer" placeholder="كود العميل"  >
+                    <input  type="text" name="" value="" id="name" placeholder="اسم العميل"  readonly>
+                    <input  type="text" name="" value="" id="nameProject" placeholder="اسم المشروع"  readonly>
+                    <input  type="text" name="" value="" id="title" placeholder="البيان"  >
+                    
+                    <input  type="text" name="" value="" id="price" placeholder="قيمة التوريد"  >
+                    <input  type="text" name="" value="" id="paid" placeholder="المبلغ المدفوع" style="display: none;" >
+                    <input  type="text" name="" value="" id="notes" placeholder="ملاحظات" >
+
+                </div>
+                <div class="priceOnly">
+                    <button class="createEmpl"><img  src="../../img/plus (1).png" alt="add" ></button>
+                    <button ><img onclick="refresh();" src="../../img/cancel.ico" alt="cancel" ></button>
+
+                    
+                </div>
+                
+                
+            </form>
+            <div class="priceOnly">
+                <button><img onclick="printReport();" src="../../img/print.ico" alt="'print'" ></button>
+                <button><img onclick="refresh();" src="../../img/refresh2.ico" alt="'تحديث" ></button>
+                <button ><img onclick="showRecycleBin();"  src="../../img/19.ICO" alt="" ></button>
+            </div>
+           
+            <div class="priceOnly2">
+                <h3>من</h3>
+                <input  type="date" name="" value="2024-01-01" id="searchFrom" >
+                <h3>الي</h3>
+                <input  type="date" name="" value="2024-01-01" id="searchTo" >
+                <input  type="text" name="" value=""  id="search" placeholder="ادخل كود العميل">
+            </div>
+            <div class="priceOnly">
+                <button onclick="searchData();"><img  src="../../img/search.png" alt="'" ></button>
+                <button onclick="exportTableToExcel();">تصدير البيانات الي اكسيل</button>
+
+            </div>
+        </aside>
+        <div class="content">
+            <section class="inputsEmployees">
+                
+                
+                <div class="tableAllEmployees" >
+                    <table border="1"  id="table">
+                        <tr>
+                            <th colspan="8" class="headTable">بيانات العملاء والخشب</th>
+                            <th colspan="2" class="totalSupply"></th>
+                        </tr>
+                        <tr>
+                            <!-- <th>م</th> -->
+                            <th>تاريخ التوريد</th>
+                            <th>كود العميل</th>
+                            <th>اسم العميل</th>
+                            <th>اسم المشروع</th>
+                            <th>البيان</th>
+                            <th>قيمة التوريد</th>
+                            <th>ملاحظات</th>
+                            <th>تعديل</th>
+                            <th>حذف</th>
+                        </tr>
+                        <tbody class="tbodyEmployees">
+                            
+                            
+                        </tbody>
+                    </table>
+                    
+                    
+                </div>
+                
+                
+            </section>
+           
+            
+
+
+            
+        </div>
+
+        <div class="report">
+            <table border="1">
+                <thead>
+                    <tr>
+                        <td >اعداد</td>
+                        <td class="userReport">ادارة</td>
+                        <th class="titleReport"><img class="imgLogo" src="../../img/logo.jpeg"  alt=""><h3>المستقبل جروب للهندسة والمقاولات</h3> </th>
+                    </tr>
+                    <tr>
+                        <td >التاريخ</td>
+                        <td class="dateReport">00-00-00</td>
+                        <th class="thirdTitleReport"></th>
+    
+                    </tr>
+                    <tr>
+                        <td >الوقت</td>
+                        <td class="timeReport">00:00</td>
+                        <th class="secondTitleReport">كشف حساب عميل</th>
+    
+                    </tr>
+                    
+                </thead>
+                
+            </table>
+            <table border="1">
+                <tr>
+                    
+                    <td >التاريخ من</td>
+                    <td class="resultDateFrom">-</td>
+                    <td>التاريخ الي</td>
+                    <td class="resultDateTo">-</td>
+                    <td>كود العميل</td>
+                    <td class="codeCustomer"></td>
+                    <td>العميل</td>
+                    <td colspan="2" class="nameSupply">المستقبل جروب للهندسة والمقاولات</td>
+
+                </tr>
+                <tr>
+                    
+                    <td>رصيد ما قبله</td>
+                    <td class="priceReport1">0000000</td>
+                    <td>اجمالي المدين</td>
+                    <td class="totalReport1">0000000</td>
+                    <td>اجمالي الدائن</td>
+                    <td class="paidReport1">0000000</td>
+                    <td>رصيد ختامي</td>
+                    <td class="remainReport1">0000000</td>
+
+                </tr>
+
+            </table>
+            <table border="1" dir="rtl">
+                <tr>
+                    
+                    <th>م</th>
+                    <th>التاريخ</th>
+                    <th>كود العميل</th>
+                    <th>العميل</th>
+                    <th>اسم المشروع</th>
+                    <th>البيان</th>
+                    <th>مدين</th>
+                    
+
+                </tr>
+                <tbody class="tbodyReport">
+
+                </tbody>
+                
+
+            </table>
+            
+
+        </div>
+        
+    </div>
+
+   
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.10.3/xlsx.full.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>

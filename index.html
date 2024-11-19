@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GS Future Group</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  
+  <body dir="ltr" onload="getLogin();">
+    <div class="body-app">
+      <div class="alarm1 alarm">
+        <h3 style="color: #fff; margin: 10px;">هل تريد تفعيل النسخة التجريبية</h3>
+        <div class="buttons">
+          <button id="btnCancel" onclick="refresh();">الغاء</button>
+            <button id="btnCheckEdite" onclick="ActiveApp();">موافق</button>
+        </div>
+      </div>
+      <div class="alarm2 alarm">
+        <h3 style="color: #fff; margin: 10px;">تم تفعيل النسخة التجريبية</h3>
+      </div>
+      <div class="registeUser">
+        <h2>يرجي تسجيل البيانات للتفعيل</h2>
+        <form action="" method="">
+            <div class="divUsername">
+                <label>اسم المستخدم</label>
+                <input type="text" value="" id="usernameReg" placeholder="ادخل اسم المستخدم"  required/>
+            </div>
+            <!-- <div class="divPassword">
+              <label>ادخل الايميل</label>
+              <input type="email" value="" id="emailReg" placeholder="ادخل الايميل" required/>
+            </div> -->
+            <div class="divPassword">
+                <label>رقم الهاتف</label>
+                <input type="text" value="" id="phoneReg" maxlength="11" placeholder="ادخل الهاتف" required/>
+            </div>
+            <div class="divPassword">
+                <label>كلمة  المرور</label>
+                <input type="password" value="" id="passwordReg" placeholder="ادخل كلمة المرور" required/>
+            </div>
+            <div class="divButton">
+              <button class="btn-registe">تسجيل</button>
+            </div>
+        </form>
+      </div>
+      <div class="user">
+        <h2>يرجي تسجيل الدخول</h2>
+        <form action="" method="">
+            <div class="divUsername">
+                <label>اسم المستخدم</label>
+                <input type="text" value="" id="username" placeholder="ادخل اسم المستخدم" />
+            </div>
+            <div class="divPassword">
+                <label>كلمة  المرور</label>
+                <input type="password" value="" id="password" placeholder="ادخل كلمة المرور"/>
+            </div>
+            <div class="divButton">
+              <button class="btn-signIn">تسجيل الدخول</button>
+            </div>
+        </form>
+      </div>
+      <!-- <h1 style="opacity: 0.4;font-size: 90px;font-weight: 900;position: absolute;left: 10%;"><span class="marklogo"></span> المستقبل جروب للهندسة والمقاولات </h1> -->
+
+      
+    </div>
+      
+    <script src="./renderer.js"></script>
+  </body>
+</html>

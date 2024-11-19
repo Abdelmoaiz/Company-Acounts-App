@@ -1,0 +1,381 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #fff;
+    color: rgb(26, 24, 24);
+
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+header{
+    
+    width: 100%;
+    height: 60px;
+    padding:5px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #ddd;
+    border: 1px solid #333;
+    color: #000;
+    
+
+}
+.exit,.home{
+    /* margin: 10px 0; */
+    border-radius: 10px;
+    font-size: 18px;
+    color:#fff;
+    border: none;
+    outline: none;
+    /* padding: 10px 10px; */
+    text-align: center;
+    /* background-color: rgba(73, 236, 241, 0.788); */
+    cursor: pointer;
+
+}
+.casher:hover,.home:hover{
+    background-color: rgba(79, 202, 206, 0.788);
+
+}
+.casher:active,.home:active{
+    background-color: rgba(44, 138, 141, 0.788);
+
+}
+.userName,.dateAndTime{
+    font-size: 22px;
+    font-weight: bold;
+}
+.titleReport{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.imgLogo{
+    width: 50px;
+    height: 50px;
+    
+}
+
+aside{
+    width: 20%;
+    float: right;
+    margin: auto;
+    border: 2px solid rgb(159, 155, 156);
+    border-radius: 10px;
+
+}
+aside img{
+    width: 50px;
+    height: 50px;
+    display: block;
+    padding: 5px;
+
+    /* display: block;
+    width: 100%; */
+}
+.content{
+    width: 80%;
+    float: left;
+    margin: 0;
+}
+
+.inputs{
+    background-color: #fff;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 10px 30px 10px;
+}
+
+input,.button,select,textarea{
+    width: 100%;
+    /* height: 40px; */
+    margin: auto;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 16px;
+    color:rgb(20, 20, 20);
+    border: 3px solid rgb(159, 155, 156);
+    /* outline: none; */
+    padding: 2px 10px;
+    cursor: pointer;
+
+}
+
+/* button{
+    margin: auto;
+    display: block;
+    width: 100%;
+    background-color: #fff;
+} */
+input:focus{
+    background-color: rgb(33, 161, 112);
+
+}
+
+#addItems{
+    width: auto;
+}
+.buttons,.inputsSearch{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+}
+button{
+    border-radius: 10px;
+    border: none;
+    margin: 5px;
+}
+
+button:hover{
+    background-color: rgb(109, 175, 150);
+
+}
+button:active{
+    transform: scaleX(1.02);
+    background-color: rgb(128, 204, 175);
+
+}
+.searchEmployeeMakeUp,.inputsexpenses{
+    display: none;
+}
+.priceOnly{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    text-align: center;
+    margin: auto;
+    border: 2px solid rgb(159, 155, 156);
+
+}
+.priceOnly2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+
+}
+
+.output{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+}
+
+table{
+    width: 100%;
+    /* margin-top: 20px; */
+    text-align: center;
+}
+.tableAllEmployees{
+  
+    height: 100%;
+    overflow-y :scroll;
+  }
+table button{
+    /* display: none; */
+    margin: 0;
+    padding: 0;
+    width: 90%;
+    height:24px;
+    background-color: #ddd;
+    border: 1px solid #333;
+    color: #000;
+}
+table td{
+    height: 10px;
+}
+table .headTable{
+    background-color: #ddd;
+    border: 1px solid #333;
+    color: #000;
+    font-size: 24px;
+    font-weight: bold;
+}
+@media (max-width:767px) {
+    header{
+        padding:5px 5px;
+        text-align: center;
+        font-size: 10px;
+
+    }
+    header p{
+        display: none;
+    }
+    
+    #total,#gain-trading,#gain-normal,#quan-total{
+        font-size: 10px;
+        text-align: center;
+    }
+    table{
+        font-size: 10px;
+
+    }
+    table button{
+        font-size: 10px;
+        margin: 3px auto;
+        padding: 0 5px;
+
+    }
+
+}
+.tablePrint{
+    display: none;
+    /* margin-top: 20px; */
+}
+.invoice,.receipt{
+    display: none;
+    font-weight: bold;
+}
+
+.invoice .invoice-content{
+    border: 2px solid #000;
+    padding: 5px 20px;
+
+}
+
+.receipt .recipt-content {
+    border: 2px solid #000;
+    padding: 20px 10px 40px ;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.receipt .recipt-content .content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.receipt .recipt-content .content .table-items{
+    width: 40%;
+    border: 1px solid;
+}
+.receipt .recipt-content .content table{
+    width: 100%;
+}
+.invoice .header, .receipt .header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px 10px;
+    border-bottom: 2px dashed #000;
+    margin-bottom: 20px;
+
+}
+
+
+.invoice .header .engy ,.receipt .header .engy{
+    font-size: 36px;
+    font-weight: 900;
+}
+.invoice .header .logo, .receipt .logo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 35%;
+}
+.invoice .header .logo img ,.receipt .logo img{
+    width: 40%;
+    border-radius: 20px;
+
+}
+.invoice p,.receipt p{
+    font-size: 15px;
+}
+/* .receipt .content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+} */
+.invoice ol{
+    margin-right: 20px;
+}
+
+.invoice footer{
+    text-align: center;
+}
+
+
+.receipt footer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.alarm{
+    display: none;
+    width: 50%;
+    position: fixed;
+    z-index: 10;
+    top: 100px;
+    left: 25%;
+    margin: 50px auto;
+    padding: 20px;
+    /* display: flex; */
+    flex-direction: column;
+    border: 1px solid rgb(5, 132, 157);
+    background-color: rgb(16, 105, 122);
+    border-radius: 20px;
+    text-align: center;
+  
+  }
+  
+  .alarm input{
+    width: 80%;
+    margin: 20px auto;
+    cursor: pointer;
+  }
+  .alarm .buttons button{
+    width: 40%;
+    background-color: #ddd;
+    border: 1px solid #333;
+    color: #000;
+    font-size: 20px;
+    cursor: pointer;
+  
+  }
+  .report{
+    display: none;
+    height: 100vh;
+    background-color: #f9f9f9;
+    /* position: relative; */
+    padding: 10px;
+    border: 1px solid #ddd;
+    
+  }
+  .inputsSearch{
+    display: none;
+  }
+  table{
+    margin-bottom: 10px;
+    /* border: 1px solid #f00; */
+
+  }
+
+  .titleReport,
+  .secondTitleReport,.thirdTitleReport{
+    border: none;
+  }
+  .titleReport{
+    font-size: 28px;
+  }
+  .secondTitleReport{
+    font-size: 20px;
+
+  }
+  .report td{
+    padding:7px 0 7px 0;
+  }

@@ -1,0 +1,240 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #fff;
+    /* height: 100vh; */
+    color: rgb(26, 24, 24);
+  }
+  a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10%;
+    padding: 7px;
+  }
+  .btn-link-home{
+    /* background-color:rgb(13, 182, 219); */
+    color: #fff;
+    border-radius: 0;
+    border-bottom: 1px solid #fff;
+
+  }
+  .btn-link-home:hover{
+    color: rgb(63, 217, 155);
+    border-bottom: 2px solid #fff;
+    border-radius: 10px;
+
+
+  }
+  li:hover{
+    
+  }
+  ul{
+    list-style: none;
+  }
+  .container{
+    height: 100vh;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-right: auto;
+    margin-left: auto;
+
+  }
+  
+  .home{
+    height: 100%;
+    background-image: url(../../../img/1635178714591.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color:rgb(31, 33, 33);
+    color: #fff;
+
+    opacity: 1;
+  }
+  .links .mainUl{
+    display: flex;
+    position: fixed;
+    padding: 10px;
+    position: relative;
+    z-index: 10;
+    
+    
+  }
+  .links .mainUl li{
+    margin-left: 20px;
+    padding: 10px;
+   
+    font-size: 20px;
+    position: relative;
+    z-index: 10;
+  }
+  .links .mainUl li:hover{
+    cursor: pointer;
+  }
+  .links .mainUl li:hover ul li {
+    display: block;
+    margin-right: -20px;
+  }
+  .links ul li ul{
+    /* margin-left: -100px; */
+    position: absolute;
+    margin-bottom: 10px;
+
+  }
+  .links ul li ul li{
+    width: 180px;
+    display: none;
+  }
+  .links ul li ul li a{
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 0;
+    border-bottom: 1px solid #fff;
+
+
+  }
+  .links ul li ul li a:hover{
+    color: rgb(63, 217, 155);
+    /* border: 1px solid #fff; */
+    border-radius: 10px;
+
+    width: 180px;
+    border-bottom: 2px solid #fff;
+
+
+  }
+  
+  
+  
+
+  h3{
+    color: #2e2929;
+  }
+  
+  
+  .home .app{
+    width: 60%;
+    text-align: center;
+    padding: 20px 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top:  40%;
+    left: 25%;
+    z-index: 0;
+    
+    
+  }
+  .home .app .textHome{
+    font-size: 46px;
+    text-align: center;
+  }
+  
+ 
+  .divAlarm{
+    display: none;
+  }
+  .alarm{
+    width: 40%;
+    position: fixed;
+    top: 100px;
+    left: 25%;
+    margin: 50px auto;
+    padding: 20px;
+    flex-direction: column;
+    border: 1px solid rgb(5, 132, 157);
+    background-color: rgb(16, 105, 122);
+    border-radius: 20px;
+    text-align: center;
+  
+  }
+  
+  .alarm input{
+    margin: 20px auto;
+    cursor: pointer;
+  }
+  .alarm .buttons button{
+    width: 25%;
+    background-color: rgb(6, 153, 183);
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+  
+  }
+  .alarm .buttons button:hover{
+    background-color: rgb(70, 196, 221);
+
+
+  }
+  @media (max-width:1199px) {
+    .home .app .app-home{
+      width: 70%;
+      grid-template-columns: repeat(auto-fill,minmax(150px,1fr));
+      
+    }
+    .home .app .app-home .invo a{
+      font-size: 18px;
+      padding: 25px 30px;
+    }
+    
+    
+  }
+
+
+  @media (max-width:991px) {
+    .home .app .app-home{
+      width: 100%;
+      grid-template-columns: repeat(auto-fill,minmax(180px,1fr));
+      
+    }
+    .home .app .app-home .invo a{
+      font-size: 18px;
+      padding: 25px 30px;
+    }
+  
+  
+  
+}
+@media (max-width:767px) {
+  .home .app .app-home{
+    width: 100%;
+    grid-template-columns: repeat(auto-fill,minmax(160px,1fr));
+    grid-gap:5px;
+    
+  }
+  
+  .home .app .app-home .invo{
+    margin: 10px;
+    /* padding: 30px; */
+  }
+  .home .app .app-home .invo a{
+    font-size: 12px;
+    
+  }
+  
+}
+@media (max-width:550px) {
+  .home .app .app-home{
+    width: 100%;
+    grid-template-columns: repeat(auto-fill,minmax(150px,1fr));
+    grid-gap:5px;
+    
+  }
+  
+  .home .app .app-home .invo{
+    margin: 5px;
+    /* padding: 30px; */
+  }
+  .home .app .app-home .invo a{
+    font-size: 12px;
+    
+  }
+  
+}

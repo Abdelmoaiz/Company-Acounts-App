@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المخزن الرئيسي</title>
+    <link rel="stylesheet" href="css/purchases.css">
+</head>
+<body dir="rtl" onload="showData();">
+    <header>
+        <a class="casher" href="../home/home.html">الرئيسية</a>
+        <h1>المخزن الرئيسي</h1>
+        <a class="sales" href="../../index.html">خروج</a>
+    </header>
+    <div class="alarm1 alarm">
+        <h3 style="color: #fff; margin: 10px;">هل تريد الحذف</h3>
+        <div class="buttons">
+            <button id="btnCheckEdite" onclick="checkPass();">موافق</button>
+            <button id="btnCancel" onclick="refresh();">الغاء</button>
+        </div>
+    </div>
+    <div class="alarm2 alarm">
+        <h3 style="color: #fff; margin: 10px;">هذا الباركود مسجل من قبل هل تريد الاستمرار</h3>
+        <div class="buttons">
+            <button id="btnCheckEdite" onclick="checkBarcode();">موافق</button>
+            <button id="btnCancel" onclick="cancel();">الغاء</button>
+        </div>
+    </div>
+    <div class="cruds">
+        
+        <div class="buttons">
+            <button class="btnOpenInputs" onclick="openInputs();">اضافة اصناف جديدة</button>
+            <input type="text" name="" id="search" placeholder="بحث" onkeyup="searchItems(this.value)">
+            <button class="btnOpenInputs" onclick="refresh();" >تحديث</button>
+            <button onclick="exportTableToExcel();">تصدير الي اكسيل</button>
+
+        </div>
+        <div class="inputs">
+            <form action="">
+                <div>
+                    <label for="item">اسم الصنف</label>
+                    <input type="text" value="" id="item" placeholder="اسم صنف" required>
+
+                </div>
+                <div>
+                    <label for="quntity">العدد</label>
+                    <input type="text" value="" id="quantity" placeholder="الكمية" required>
+
+                </div>
+                <select id="selectState">
+                    <option value="" disabled >اختر حالة الصنف</option>
+                    <option value="سليم">سليم</option>
+                    <option value="تالف"> تالف</option>
+                </select>
+                <div class="buttons">
+                    <button class="create">اضافة</button>
+                    <button class="cancel">الغاء</button>
+
+                </div>
+            </form>
+        </div>
+        
+        <table border="1" id="table">
+            <tr>
+                <th colspan="15" class="headTable">كل الاصناف</th>
+            </tr>
+            <tr>
+                <th>م</th>
+                <th>التاريخ</th>
+                <th>اسم الصنف</th>
+                <th>الكمية</th>
+                <th>الحالة</th>
+                <th>تعديل</th>
+                <th>حذف</th>
+                
+            </tr>
+            <tbody class="tbody">
+                
+                
+            </tbody>
+        </table>
+    </div>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.10.3/xlsx.full.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
+    <script src="js/purchases.js"></script>
+</body>
+</html>

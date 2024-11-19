@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اضافة عميل جدد</title>
+    <link rel="stylesheet" href="css/userRegister.css">
+</head>
+<body dir="rtl" onload="showUsers();">
+    <header>
+        <a class="home" href="../home/home.html"><img src="../../img/huanfang.ico" alt="home"></a>
+        <h1>اضافة عملاء جدد</h1>
+        <a class="exit" href="../../index.html">خروج</a>
+    </header>
+    <div class="alarm">
+        <div class="inputs">
+            <div class="buttons">
+                <button id="btnCheckEdite" onclick="checkPass();">موافق</button>
+                <button id="btnCancel" onclick="exitePass();">الغاء</button>
+            </div>
+        </div>
+    </div>
+    <div style="display: flex;">
+        <button id="btnOpenInputs" onclick="showInputs();">اضافة عميل جديد</button>
+        <button  onclick="refresh();">تحديث</button>
+        <button  onclick="showProjectDelete();" class="btnShow">العملاء المحذوفة</button>
+        <button onclick="exportTableToExcel();">تصدير البيانات الي اكسيل</button>
+
+    </div>
+    
+    <div class="user">
+        <form action="" method="" class="addEmployee"> 
+            <div class="priceOnly" >
+                <div>
+                    <label>تاريخ التوريد</label>
+
+                    <input  type="date" name="" value="2024-01-01" id="dateContract"   >
+
+                </div>
+                <div>
+                    <label>كود العميل</label>
+                    <input type="text" value="" id="newCode"  placeholder="كود العميل" readonly/>
+                </div>
+                <div>
+                    <label>اسم العميل</label>
+                    <input type="text" value="" id="newCustomer"  placeholder="ادخل اسم العميل"/>
+                </div>
+                <div>
+                    <label>اسم المشروع</label>
+                    <input type="text" value="" id="newProject"  placeholder="ادخل اسم المشروع"/>
+                </div>
+            </div>
+            
+            <div class="priceOnly">
+                <div>
+                    <label for="address">العنوان</label>
+                    <input  type="text" name="" value="" id="address" placeholder="العنوان"  >
+
+                </div>
+                <div>
+                    <label for="phone">رقم التليفون</label>
+                    <input  type="text" name="" value="" id="phone" placeholder="رقم التليفون" minlength="11" maxlength="11"  >
+
+                </div>
+                <div>
+                    <label for="priceContract">قيمة التعاقد</label>
+                    <input  type="text" name="" value="" id="priceContract" placeholder="قيمة التعاقد"  >
+
+                </div>
+                <div>
+                    <label for="rate">نسبة الاشراف</label>
+                    <input  type="text" name="" value="" id="rate" placeholder=" نسبة الاشراف"  >
+
+                </div>
+               
+            </div>
+            <div class="priceOnly">
+                
+                <div>
+                    <label for="state">حالة المشروع</label>
+                    <select name="" id="state">
+                        <option value="مفتوح">مفتوح</option>
+                        <option value="مغلق">مغلق</option>
+                    </select>
+
+                </div>
+                
+                <div>
+                    <label for="notes">ملاحظات</label>
+                    <input  type="text" name="" value="" id="notes" placeholder="ملاحظات" >
+
+                </div>
+
+            </div>
+            <div class="priceOnly">
+                
+
+            </div>
+            
+            
+        </form>
+        <button class="register">تسجيل عميل جديد</button>
+        
+    </div>
+    <div class="cruds">
+        <table border="1" id="table">
+            <tr>
+                <th colspan="14" class="headTable">جميع العملاء</th>
+            </tr>
+            <tr>
+                <th>م</th>
+                <th>كود</th>
+                <th>اسم العميل</th>
+                <th>اسم المشاريع</th>
+                <th>تعديل</th>
+                <th>حذف</th>
+            </tr>
+            <tbody class="tbodyUsers">
+                
+                
+            </tbody>
+        </table>
+        
+    </div>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.10.3/xlsx.full.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الرئيسية</title>
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body dir="rtl">
+    <div id="login">
+        <h1>Login In</h1>
+        <div class="input">
+            <label class="lblUser">User Name</label>
+            <input type="text" name="userName" id="userName">
+            <label class="lblPass">Password</label>
+            <input type="password" name="password" id="pass">
+            <button>Login</button>
+        </div>
+    </div>
+    <div class="alarm alarm1">
+        <div class="inputsAlarm">
+            <h3 style="color: #fff; margin: 10px;">ادخل الباسوورد </h3>
+            <input type="password" name="" id="inputPass">
+            <div class="buttons">
+                <button id="btnCheckEdite" onclick="checkPass();">موافق</button>
+                <button id="btnCancel" onclick="exitePass();">الغاء</button>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="alarm alarm2">
+        <div class="inputsAlarm">
+            <h3 style="color: #fff; margin: 10px;">هل تريد الحذف</h3>
+            <div class="buttons">
+                <button id="btnCheckEdite" onclick="checkPass2();">موافق</button>
+                <button id="btnCancel" onclick="exitePass();">الغاء</button>
+            </div>
+        </div>
+    </div> -->
+    <header>
+        <h1>المستقبل جروب للهندسة والمقاولات</h1> 
+        <img src="../../img/logo.jpeg" alt="logo">
+        <!-- <a class="exit" href="../../index.html">خروج</a> -->
+
+    </header>
+    <div class="app">
+        <div class="container">
+            <nav class="navRight">
+                <button class="btnReserve" onclick="goTo('../accountClients/index.html')">العملاء والمشاريع</button>
+                <button onclick="goTo('../CustomerSupply/index.html')">توريد العملاء</button>
+                <button onclick="goTo('../projectExpenses/index.html')">صرف المشاريع</button>
+                <button onclick="goTo('../reportCustomer/index.html')"> تقرير عميل</button>
+                <button onclick="goTo('../customer/index.html')">اضافة عميل</button>
+                <button onclick="goTo2('../userRegister/userRegister.html')">المستخدمين</button>
+                <button onclick="goTo('../../index.html')">خروج</button>
+
+
+            </nav>
+            <div class="allSection">
+                <!-- <section class="main">
+                </section> -->
+                
+            </div>
+            <nav class="navLeft">
+                <button onclick="goTo('../accountSupplier/index.html')">بيانات الموردين والمقاولين</button>
+                <button onclick="goTo('../SupplierSupply/index.html')">دفعات الموردين والمقاولين</button>
+                <button onclick="goTo('../supplierExpenses/index.html')">توريد الموردين والمقاولين</button>
+                <button onclick="goTo('../reportSupplier/index.html')">تقرير الموردين والمقاولين</button>
+                <button onclick="goTo('../supplier/index.html')">اضافة مورد</button>
+                <button onclick="goTo('../store/index.html')">المخزن</button>
+                <button onclick="goTo('../saved/index.html')">العهدة</button>
+                <!-- <a href="../../index.html"></a> -->
+            </nav>
+            
+        </div>
+        <footer>
+            <h3> تصميم م/ عبدالمعز شيخون   .... 01100865650 / 01069913709</h3>
+        </footer>
+    </div>
+    
+
+    
+    
+
+    <script src="./js/home.js"></script>
+</body>
+</html>

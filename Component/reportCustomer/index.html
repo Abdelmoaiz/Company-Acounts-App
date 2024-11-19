@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تقرير عميل</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body dir="rtl" onload="">
+    <header>
+        <a class="home" href="../home/home.html"><img src="../../img/huanfang.ico" alt="home"></a>
+        <span class="userName"></span>
+        <h1>تقرير عميل</h1>
+        <span class="dateAndTime"></span>
+        <a class="exit" href="../../index.html"><img src="../../img/cancel.ico" alt="exit"></a>
+    </header>
+    <div class="app">
+        
+        <div class="buttons">
+            <div class="inputsSearch">
+                <button onclick="openInputsSearch();">بحث</button>
+                <button onclick="refresh();">تحديث</button>
+                <button onclick="printReport();">طباعة</button>
+                <button onclick="exportTableToExcel();">تصدير البيانات الي اكسيل</button>
+
+            </div>
+            <div class="inputsSearch inputsSearch2">
+                <h3>من</h3>
+                <input  type="date" name="" value="2024-01-01" id="searchFrom" >
+                <h3>الي</h3>
+                <input  type="date" name="" value="2024-01-01" id="searchTo" >
+                <input  type="text" name="" value=""  id="search" placeholder="ادخل كود العميل">
+                <button onclick="searchData();">بحث</button>
+                <button type="reset" onclick="refresh();">الغاء</button>
+    
+            </div>
+        </div>
+       
+        <!-- <div class="allProject"> -->
+           
+        <div class="report">
+            <table border="1" id="table">
+                <thead>
+                    <tr>
+                        <td >اعداد</td>
+                        <td class="userReport">ادارة</td>
+                        <th style="border: none;width: 40px;" colspan="2" class="colorBlue"><img style="width: 100px;" class="imgLogo" src="../../img/logo.jpeg"  alt=""></th>
+                        <th style="border: none;width: 40px;" colspan="6" class="colorBlue"><h3 style="font-size: 32px;" >المستقبل جروب للهندسة والمقاولات</h3> </th>
+                    </tr>
+                    <tr>
+                        <td >التاريخ</td>
+                        <td class="dateReport">00-00-00</td>
+                        <th class="thirdTitleReport"></th>
+                        <th style="border: none;font-size: 40px;" colspan="8" class=" colorRed"></th>
+
+                    </tr>
+                    <tr>
+                        <td >الوقت</td>
+                        <td class="timeReport">00:00</td>
+                        <th style="border: none;font-size: 32px;" colspan="8" class=" colorRed">كشف حساب عميل</th>
+    
+                    </tr>
+                    
+                </thead>
+                <tr class="hhtt">
+                    
+                    <td class="colorRed" >التاريخ من</td>
+                    <td class="resultDateFrom" style="width: 170px;">-</td>
+                    <td class="colorRed">التاريخ الي</td>
+                    <td class="resultDateTo" style="width: 170px;">-</td>
+                    <td class="colorRed">كود العميل</td>
+                    <td class="codeCustomer colorBlue">-</td>
+                    <td class="colorRed">اسم العميل</td>
+                    <td  class="nameSupply">-</td>
+                    <td class="colorRed">اسم المشروع</td>
+                    <td class="nameProject">-</td>
+
+                </tr>
+                <tr class="hhtt">
+                    <td class="colorRed">قيمة التعاقد</td>
+                    <td class="priceProject">0</td>
+                    <td class="colorRed">رصيد ما قبله</td>
+                    <td class="priceBack">0</td>
+                    <td class="colorRed">اجمالي مدين</td>
+                    <td class="totalExpensesTop">0</td>
+                    <td class="colorRed">اجمالي دائن</td>
+                    <td class="totalPaidTop">0</td>
+                    <td class="colorRed">رصيد ختامي</td>
+                    <td class="totalRemainTop">0</td>
+
+                </tr>
+                <tr>
+                    <th colspan="10">التفاصيل</th>
+                </tr>
+                <tr>
+                    
+                    <th>م</th>
+                    <th >التاريخ</th>
+                    <th colspan="5" class="colorRed">البيان</th>
+                    <th class="colorRed">مدين</th>
+                    <th class="colorRed">دائن</th>
+                    <th class="colorRed">الرصيد</th>
+                    
+
+                </tr>
+                <tbody class="tbodyReport">
+
+                </tbody>
+            </table>
+            <!-- <table border="1">
+               
+
+            </table>
+            <table border="1" dir="rtl">
+               
+                
+
+            </table> -->
+            
+            
+        </div>
+        <footer>
+            <h2>المحاسب</h2>
+            <h2>المراجع</h2>
+            <h2>المدير</h2>
+        </footer>
+    </div>
+   
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.10.3/xlsx.full.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,7 +1,7 @@
 let username = document.querySelector("#username");
 let password = document.querySelector("#password");
 let btnSignIn = document.querySelector(".btn-signIn");
-const {ipcRenderer}=   require('electron')
+// const {ipcRenderer}=   require('electron')
 
 let date = new Date();
 let dateEnd;
@@ -74,8 +74,8 @@ setTimeout(() => {
 }, 1);
 
 function getLogin(){
-    ipcRenderer.send('get-login', 'bing')
-    ipcRenderer.on('get-login',(e,args)=>{
+    // ipcRenderer.send('get-login', 'bing')
+    // ipcRenderer.on('get-login',(e,args)=>{
         const myLogin = JSON.parse(args)
         login.push(myLogin)
         if(login != "" && login[login.length-1].length != 0 && login[login.length-1][0] != ""){
@@ -87,7 +87,8 @@ function getLogin(){
         }
 
         // console.log(login[login.length-1])
-})}
+// })
+}
 // getLogin()
 
 // console.log(login)
@@ -121,7 +122,7 @@ btnRegiste.addEventListener("click",(e)=>{
             dateEnd :`${year}-${month}-${dayEnd}`
         }
         infoRegist.push(infoReg)
-        ipcRenderer.send('infoRegist',infoReg)
+        // ipcRenderer.send('infoRegist',infoReg)
         document.querySelector(".registeUser").style.display = "none";
         setTimeout(() => {
             document.querySelector(".alarm2").style.display = "block";
@@ -184,7 +185,7 @@ btnSignIn.addEventListener("click",(e)=>{
         if(login[login.length-1][0].state = "open" || login == ""){
 
         }else{
-            ipcRenderer.send('userNameView',dataSignIn)
+            // ipcRenderer.send('userNameView',dataSignIn)
 
         }
         
